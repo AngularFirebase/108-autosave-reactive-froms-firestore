@@ -1,4 +1,6 @@
-# Episode 10X
+# Episode 108
+
+Automatically sync reactive form data to Firestore
 
 
 1. `git clone <this-repo>` 
