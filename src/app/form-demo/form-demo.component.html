@@ -1,0 +1,75 @@
+<!-- <div [ngSwitch]="state || null"> -->
+
+<div *ngIf="state === 'synced'" class="notification is-success">
+    Form is synced with Firestore
+</div>
+
+<div *ngIf="state === 'modified'" class="notification is-warning">
+    Form has unsaved changes
+</div>
+
+<div *ngIf="state === 'loading'" class="notification is-info">
+    Form data is preloading
+</div>
+
+<div *ngIf="state === 'error'" class="notification is-danger">
+    Form tried and failed to save to Firestore
+</div>
+<!-- </div> -->
+
+<hr>
+
+
+
+
+
+
+
+
+<form [formGroup]="myForm" fireForm path="contacts/test" (stateChange)="changeHandler($event)">
+
+    <div class="columns">
+        <div class="column">
+            <h3>Reactive Form Data</h3><br> {{ myForm.value | json }}
+        </div>
+
+        <div class="column">
+
+            <h3>Firestore Data</h3><br> {{ myDoc | async | json }}
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <hr>
+
+    <mat-form-field class="m-right">
+        <input matInput placeholder="email" formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-select formControlName="career" placeholder="career">
+            <mat-option value="Magician">Magician</mat-option>
+            <mat-option value="Clown">Clown</mat-option>
+            <mat-option value="Juggler">Juggler</mat-option>
+        </mat-select>
+    </mat-form-field><br>
+
+    <mat-form-field>
+        <textarea matInput placeholder="your bio" formControlName="bio"></textarea>
+    </mat-form-field>
+
+
+
+
+    <hr> Fireform state: {{ state }} <br>
+    <hr>
+
+    <button mat-raised-button color="primary" [disabled]="myForm.invalid || state !== 'modified'">Save</button>
+
+
+</form>

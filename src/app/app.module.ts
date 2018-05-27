@@ -14,6 +14,7 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
+
 // Add your project credentials
 // Then use it in the imports section below
 const yourFirebaseConfig = {
@@ -27,10 +28,53 @@ const yourFirebaseConfig = {
 
 // Delete Me!
 import { firebase } from '../env';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
+import {
+  MatAutocompleteModule,
+  MatBadgeModule,
+  MatBottomSheetModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatTreeModule,
+} from '@angular/material';
+import { FormDemoComponent } from './form-demo/form-demo.component';
+import { FireFormDirective } from './fire-form.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FormDemoComponent,
+    FireFormDirective
   ],
   imports: [
     BrowserModule,
@@ -39,7 +83,14 @@ import { firebase } from '../env';
     AngularFirestoreModule, 
     AngularFireAuthModule, 
     AngularFireStorageModule,
-    FontAwesomeModule 
+    FontAwesomeModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSelectModule, 
+    MatGridListModule, 
   ],
   bootstrap: [AppComponent]
 })

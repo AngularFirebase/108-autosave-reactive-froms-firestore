@@ -8,9 +8,6 @@ import { AngularFirestore } from 'angularfire2/firestore'
 })
 export class AppComponent {
   constructor(private afs: AngularFirestore) { 
-    afs.collection('animals').snapshotChanges(
-  ).subscribe(x => {
-    console.log(x)
-  })
+    
   }
 }
