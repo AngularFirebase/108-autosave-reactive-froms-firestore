@@ -7,14 +7,13 @@
 <div *ngIf="state === 'modified'" class="notification is-warning">
     Form has unsaved changes
 </div>
-
-<div *ngIf="state === 'loading'" class="notification is-info">
+<!-- Getting an ERROR Error: ExpressionChangedAfterItHasBeenCheckedError -->
+<!-- <div *ngIf="state === 'loading'" class="notification is-info">
     Form data is preloading
-</div>
-
+</div> -->
 <div *ngIf="state === 'error'" class="notification is-danger">
     Form tried and failed to save to Firestore
-</div>
+</div> 
 <!-- </div> -->
 
 <hr>
